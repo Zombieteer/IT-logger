@@ -1,0 +1,40 @@
+{
+  "logs": [{
+      "id": 1,
+      "message": "kuch bhi 1",
+      "attention": false,
+      "date": "kabhi bhi 1",
+      "tech": "koi bhi 1"
+    },
+    {
+      "id": 2,
+      "message": "kuch bhi 2",
+      "attention": true,
+      "date": "kabhi bhi 2",
+      "tech": "koi bhi 2"
+    },
+    {
+      "id": 3,
+      "message": "kuch bhi 3",
+      "attention": false,
+      "date": "kabhi bhi 3",
+      "tech": "koi bhi 3"
+    }
+  ],
+  "techs": [{
+      "id": 1,
+      "firstName": "koi",
+      "LastName": "bhi 1"
+    },
+    {
+      "id": 2,
+      "firstName": "koi",
+      "LastName": "bhi 2"
+    },
+    {
+      "id": 3,
+      "firstName": "koi",
+      "LastName": "bhi 3"
+    }
+  ]
+}
