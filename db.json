@@ -1,40 +1,30 @@
 {
-  "logs": [{
-      "id": 1,
-      "message": "kuch bhi 1",
+  "logs": [
+    {
+      "message": "hello sab sahi hai",
       "attention": false,
-      "date": "kabhi bhi 1",
-      "tech": "koi bhi 1"
+      "tech": "Koi bhi 1",
+      "date": "2020-04-14T16:19:15.992Z",
+      "id": 1
     },
     {
-      "id": 2,
-      "message": "kuch bhi 2",
+      "message": "sab bekar hai",
       "attention": true,
-      "date": "kabhi bhi 2",
-      "tech": "koi bhi 2"
-    },
-    {
-      "id": 3,
-      "message": "kuch bhi 3",
-      "attention": false,
-      "date": "kabhi bhi 3",
-      "tech": "koi bhi 3"
+      "tech": "Koi bhi 3",
+      "date": "2020-04-14T16:19:26.138Z",
+      "id": 2
     }
   ],
-  "techs": [{
+  "techs": [
+    {
       "id": 1,
-      "firstName": "koi",
-      "LastName": "bhi 1"
+      "firstName": "Shobhit",
+      "LastName": "Nigam"
     },
     {
       "id": 2,
-      "firstName": "koi",
-      "LastName": "bhi 2"
-    },
-    {
-      "id": 3,
-      "firstName": "koi",
-      "LastName": "bhi 3"
+      "firstName": "Aryan",
+      "LastName": "Kshatriya"
     }
   ]
 }

@@ -1,7 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
+import { addLog } from '../../actions/logActions'
+import { getTechs } from '../../actions/techAction'
 import M from 'materialize-css/dist/js/materialize.min.js'
 
-export const AddLogModal = () => {
+
+export const AddLogModal = ({ addLog, getTechs, tech_options: { techs, loading } }) => {
+
+    useEffect(() => {
+        getTechs()
+        // eslint-disabled-next-line
+    }, [])
+
     const [message, setMessage] = useState('');
     const [attention, setAttention] = useState(false);
     const [tech, setTech] = useState('');
@@ -10,7 +21,12 @@ export const AddLogModal = () => {
         if (message === '' || tech === '') {
             M.toast({ html: 'Please Enter a Message and Tech' })
         } else {
-            console.log(message, tech, attention);
+            const newLog = {
+                message, attention, tech, date: new Date()
+            }
+
+            addLog(newLog);
+            M.toast({ html: `Log added by ${tech}` })
             // Clear Fields
             setMessage('')
             setTech('')
@@ -42,9 +58,9 @@ export const AddLogModal = () => {
                             className="browser-default"
                             onChange={e => setTech(e.target.value)} >
                             <option value="" disabled>Select Technician</option>
-                            <option value="Koi bhi 1">Koi bhi 1</option>
-                            <option value="Koi bhi 2">Koi bhi 2</option>
-                            <option value="Koi bhi 3">Koi bhi 3</option>
+                            {!loading &&
+                                techs !== null &&
+                                techs.map(tech_op => (<option value={tech_op}>{tech_op.firstName} {tech_op.lastName}</option>))}
                         </select>
                     </div>
                 </div>
@@ -71,9 +87,17 @@ export const AddLogModal = () => {
     )
 }
 
+AddLogModal.propTypes = {
+    addLog: PropTypes.func.isRequired,
+}
+
 const modalstyle = {
     width: '75%',
     height: '75%'
 }
 
-export default AddLogModal
+const mapStateToProp = state => ({
+    tech_options: state.tech
+})
+
+export default connect(mapStateToProp, { addLog, getTechs })(AddLogModal)
