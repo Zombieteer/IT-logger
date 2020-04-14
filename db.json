@@ -19,12 +19,7 @@
     {
       "id": 1,
       "firstName": "Shobhit",
-      "LastName": "Nigam"
-    },
-    {
-      "id": 2,
-      "firstName": "Aryan",
-      "LastName": "Kshatriya"
+      "lastName": "Nigam"
     }
   ]
 }
